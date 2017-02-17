@@ -1,0 +1,11 @@
+{
+	"ImportPath": "zhoushx.com/godepDemp",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v79",
+	"Deps": [
+		{
+			"ImportPath": "xx.org/dep",
+			"Rev": "0faf332effc9c3dcc9728dc8df7ab03698479e9b"
+		}
+	]
+}
