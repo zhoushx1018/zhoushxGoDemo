@@ -1,0 +1,13 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "5fHTCRhpcRe8qunxP+2QCwY9RII=",
+			"path": "xx.org/dep",
+			"revision": "0faf332effc9c3dcc9728dc8df7ab03698479e9b",
+			"revisionTime": "2017-02-16T10:00:49Z"
+		}
+	],
+	"rootPath": "zhoushx.com/goVendorDemo"
+}
