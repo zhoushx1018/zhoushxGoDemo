@@ -8,6 +8,8 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
+//本程序相关说明，详见    http://labix.org/mgo  的 Example
+
 type Person struct {
 	Name  string
 	Phone string
