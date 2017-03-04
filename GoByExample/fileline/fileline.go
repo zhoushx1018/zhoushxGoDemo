@@ -4,15 +4,18 @@ package fileline
 
 import "fmt"
 import (
-	//"runtime"
 	"strings"
+	"runtime"
 )
 
 //文件名、行号的获取和整理
 // 实现类似 c 的 __FILE__, __LINE__
 // 例子：
-// 	fmt.Println(FileLine(runtime.Caller(0)), "hello world")
-func FileLine(pc uintptr, file string, line int, ok bool) (strRet string) {
+//	import . "zhoushxGoDemo/GoByExample/fileline"
+// 	fmt.Println(FileLine(), "hello world")
+func FileLine() (strRet string) {
+	_, file, line, ok :=runtime.Caller(1)
+
 	var s string
 	if ok {
 		slcTmp := strings.Split(file, "/")
@@ -20,11 +23,4 @@ func FileLine(pc uintptr, file string, line int, ok bool) (strRet string) {
 	}
 
 	return s
-
 }
-//
-//func main() {
-//
-//	fmt.Println(FileLine(runtime.Caller(0)), "hello world")
-//
-//}
