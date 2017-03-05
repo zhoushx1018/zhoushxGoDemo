@@ -10,6 +10,7 @@
 		src
 			github.com				#	go get github.com 后的源码路径
 			zhoushxGoDemo			#本demo所在目录
+
 				calcProj			# 项目1
 					app				#	子目录
 						calc.go		#	使用相对路径将add.go import进来 
@@ -18,6 +19,8 @@
 								
 					simplemath		#	子目录
 						add.go		#	内部公共模块代码
+
+				GoByExample         #项目 2
 
 
 ##环境变量 
