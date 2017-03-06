@@ -9,37 +9,48 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
+import (
+	. "zhoushxGoDemo/GoByExample/fileline"
+	"os"
+)
+
 var data = `
 a: Easy!
 b:
   c: 2
   d: [3, 4]
+  e: [test1,test2]
+  f: [test3,test4]
 `
 
 type T struct {
-	A string
-	B struct {
-		RenamedC int   `yaml:"c"`
-		D        []int `yaml:",flow"`
-	}
+	X1 string `yaml:"a"`
+	X2 string `yaml:"aa"`
+	X3 struct {
+		Y1 int      `yaml:"c"`
+		Y2 []string `yaml:"f,flow"`
+		Y3 []int    `yaml:"d,flow"`
+		Y4 []string `yaml:"e,flow"`
+	}  `yaml:"b"`
 }
 
 func main() {
 	t := T{}
 
-	fmt.Printf("--- t_1:\n%v\n\n", t)
+	fmt.Printf("%s-->t_1=%v\n", FileLine(), t)
 
 	err := yaml.Unmarshal([]byte(data), &t)
 	if err != nil {
 		log.Fatalf("error: %v", err)
+		os.Exit(1)
 	}
-	fmt.Printf("--- t_2:\n%v\n\n", t)
+	fmt.Printf("%s-->t_2=%v\n", FileLine(), t)
 
 	d, err := yaml.Marshal(&t)
 	if err != nil {
 		log.Fatalf("error: %v", err)
 	}
-	fmt.Printf("--- d dump:\n%s\n\n", string(d))
+	fmt.Printf("%s-->string(d)=%s\n", FileLine(), string(d))
 
 	m := make(map[interface{}]interface{})
 
@@ -47,11 +58,12 @@ func main() {
 	if err != nil {
 		log.Fatalf("error: %v", err)
 	}
-	fmt.Printf("--- m:\n%v\n\n", m)
+	fmt.Printf("%s-->m=%v\n", FileLine(), m)
 
 	d, err = yaml.Marshal(&m)
 	if err != nil {
 		log.Fatalf("error: %v", err)
 	}
-	fmt.Printf("--- m dump:\n%s\n\n", string(d))
+
+	fmt.Printf("%s-->string(d)=%s\n", FileLine(), string(d))
 }
