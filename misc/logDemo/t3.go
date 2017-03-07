@@ -4,6 +4,7 @@ import(
 	"fmt"
 	"log"
 	"os"
+	"time"
 )
 
 func main(){
@@ -13,9 +14,11 @@ func main(){
 		os.Exit(-1)
 	}
 	defer logfile.Close()
-	logger:=log.New(logfile,"\r\n",log.Ldate|log.Ltime|log.Llongfile)
-	logger.Println("hello")
-	logger.Println("oh....")
+	logger:=log.New(logfile,"\r\n",log.Ldate|log.Ltime|log.Lmicroseconds|log.Lshortfile)
+	logger.Println("INFO ", "hello")
+	logger.Println("DEBUG ","oh....")
 	logger.Fatal("test")
 	logger.Fatal("test2")
+
+	time.Sleep(time.Second*1)
 }
