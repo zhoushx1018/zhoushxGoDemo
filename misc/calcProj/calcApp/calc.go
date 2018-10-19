@@ -1,10 +1,12 @@
 //测试
 package main
 
-import "os" // 用于获得命令行参数os.Args
-import "fmt"
-import "zhoushxGoDemo/calcProj/simplemath"
-import "strconv"
+import(
+ "os" // 用于获得命令行参数os.Args
+ "fmt"
+ "github.com/zhoushx1018/zhoushxGoDemo/misc/calcProj/simplemath"
+ "strconv"
+)
 
 var Usage = func() {
 	fmt.Println("USAGE: calc command [arguments] ...")
