@@ -4,13 +4,14 @@ package main
 import(
  "os" // 用于获得命令行参数os.Args
  "fmt"
- "github.com/zhoushx1018/zhoushxGoDemo/misc/calcProj/simplemath"
+ "github.com/zhoushx1018/zhoushxGoDemo/playground/calcProj/simplemath"
  "strconv"
 )
 
 var Usage = func() {
-	fmt.Println("USAGE: calc command [arguments] ...")
-	fmt.Println("\nThe commands are:\n\tadd\tAddition of two values.\n\tsqrt\tSquare os.Args 	root of a non-negative value.")
+	fmt.Printf("USAGE: %s #command [arguments] ...\n", os.Args[0])
+	//fmt.Printf("            #command\n")
+	fmt.Printf("example: %s add 2 3\n", os.Args[0])
 
 }
 
